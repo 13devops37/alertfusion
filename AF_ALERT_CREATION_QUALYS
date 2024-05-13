@@ -1,0 +1,573 @@
+<workflow name="" version="2">
+    <diagramdatacollection>
+        <diagramdata key="DesignerInstanceId"><![CDATA[ff855d4038234886998825f706fdbb85]]></diagramdata>
+    </diagramdatacollection>
+    <action name="Create Tool Event1" type="Create Tool Event" displayname="Create Tool Event" description="" looponoutput="">
+        <properties>
+            <property name="BaseAddress"><![CDATA[http://localhost:9000]]></property>
+            <property name="Authentication"><![CDATA[Basic]]></property>
+            <property name="AuthHeader"><![CDATA[YXBpdXNlcjpBY3QxVkB0ZQ==]]></property>
+            <property name="CustomerCode"><![CDATA[AF]]></property>
+            <property name="EventDateTime"><![CDATA[]]></property>
+            <property name="DeviceType"><![CDATA[QUALYS]]></property>
+            <property name="AttackCategory" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.Title",
+"ActualExprtessionString":"Method22540eb823874afb9c12ad6e1585262f(_context,\"!!!XmlVar!!!.SkValueIterator.Title\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.Title",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method22540eb823874afb9c12ad6e1585262f(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.Title#Method22540eb823874afb9c12ad6e1585262f(_context,\"!!!XmlVar!!!.SkValueIterator.Title\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[6ff2074be89b4999be30e72bb3489b59]]></classname>
+                </expression>
+            </property>
+            <property name="AttackSubCategory"><![CDATA[]]></property>
+            <property name="Priority"><![CDATA[]]></property>
+            <property name="SourceEmail"><![CDATA[]]></property>
+            <property name="SourceHostName"><![CDATA[]]></property>
+            <property name="SourceUserName"><![CDATA[]]></property>
+            <property name="SourceIP"><![CDATA[]]></property>
+            <property name="SourcePort"><![CDATA[]]></property>
+            <property name="SourceAssetId"><![CDATA[]]></property>
+            <property name="SourceZone"><![CDATA[]]></property>
+            <property name="SourceText1"><![CDATA[]]></property>
+            <property name="SourceText2"><![CDATA[]]></property>
+            <property name="SourceText3"><![CDATA[]]></property>
+            <property name="SourceText4"><![CDATA[]]></property>
+            <property name="SourceText5"><![CDATA[]]></property>
+            <property name="SourceText6"><![CDATA[]]></property>
+            <property name="SourceText7"><![CDATA[]]></property>
+            <property name="SourceText8"><![CDATA[]]></property>
+            <property name="SourceText9"><![CDATA[]]></property>
+            <property name="SourceText10"><![CDATA[]]></property>
+            <property name="DestinationEmail"><![CDATA[]]></property>
+            <property name="DestinationHostName"><![CDATA[]]></property>
+            <property name="DestinationUserName"><![CDATA[]]></property>
+            <property name="DestinationIP" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.IP",
+"ActualExprtessionString":"Method4a290644f71f4650ab426785aa458ea0(_context,\"!!!XmlVar!!!.SkValueIterator.IP\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.IP",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method4a290644f71f4650ab426785aa458ea0(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.IP#Method4a290644f71f4650ab426785aa458ea0(_context,\"!!!XmlVar!!!.SkValueIterator.IP\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[26382008c3d04aeaba4aee9210a97e36]]></classname>
+                </expression>
+            </property>
+            <property name="DestinationPort" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.Port",
+"ActualExprtessionString":"Method82412ea6267f4522847ff63dfcf21920(_context,\"!!!XmlVar!!!.SkValueIterator.Port\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.Port",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method82412ea6267f4522847ff63dfcf21920(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.Port#Method82412ea6267f4522847ff63dfcf21920(_context,\"!!!XmlVar!!!.SkValueIterator.Port\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[a62420d0e9b6454fb993c8cbefefbbf6]]></classname>
+                </expression>
+            </property>
+            <property name="DestinationAssetId"><![CDATA[]]></property>
+            <property name="DestinationZone"><![CDATA[]]></property>
+            <property name="DestText1"><![CDATA[]]></property>
+            <property name="DestText2"><![CDATA[]]></property>
+            <property name="DestText3"><![CDATA[]]></property>
+            <property name="DestText4"><![CDATA[]]></property>
+            <property name="DestText5"><![CDATA[]]></property>
+            <property name="DestText6"><![CDATA[]]></property>
+            <property name="DestText7"><![CDATA[]]></property>
+            <property name="DestText8"><![CDATA[]]></property>
+            <property name="DestText9"><![CDATA[]]></property>
+            <property name="DestText10"><![CDATA[]]></property>
+            <property name="Text1"><![CDATA[]]></property>
+            <property name="Text2"><![CDATA[]]></property>
+            <property name="Text3"><![CDATA[]]></property>
+            <property name="Text4"><![CDATA[]]></property>
+            <property name="Text5"><![CDATA[]]></property>
+            <property name="Text6"><![CDATA[]]></property>
+            <property name="Text7"><![CDATA[]]></property>
+            <property name="Text8"><![CDATA[]]></property>
+            <property name="Text9"><![CDATA[]]></property>
+            <property name="Text10"><![CDATA[]]></property>
+            <property name="Text11"><![CDATA[]]></property>
+            <property name="Text12" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.Solution",
+"ActualExprtessionString":"Method2cef867ab85d490fbd62a0562e557b42(_context,\"!!!XmlVar!!!.SkValueIterator.Solution\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.Solution",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method22268aee6c1141f4b4428d2dd3e01e2a(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n#private object  Method2cef867ab85d490fbd62a0562e557b42(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.Item#Method22268aee6c1141f4b4428d2dd3e01e2a(_context,\"!!!XmlVar!!!.SkValueIterator.Item\")$XmlVariables.SkValueIterator.Solution#Method2cef867ab85d490fbd62a0562e557b42(_context,\"!!!XmlVar!!!.SkValueIterator.Solution\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[32bd4306db724940b2e4c2ac8b8871d3]]></classname>
+                </expression>
+            </property>
+            <property name="Text13" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.Exploitability",
+"ActualExprtessionString":"Method6ce96c0632e94e9a86969435a5fd3c00(_context,\"!!!XmlVar!!!.SkValueIterator.Exploitability\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.Exploitability",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method6ce96c0632e94e9a86969435a5fd3c00(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.Exploitability#Method6ce96c0632e94e9a86969435a5fd3c00(_context,\"!!!XmlVar!!!.SkValueIterator.Exploitability\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[6dc177c2379445b78f180f9dee3a7577]]></classname>
+                </expression>
+            </property>
+            <property name="Text14"><![CDATA[]]></property>
+            <property name="Text15"><![CDATA[]]></property>
+            <property name="Text16"><![CDATA[]]></property>
+            <property name="Text17"><![CDATA[]]></property>
+            <property name="Text18"><![CDATA[]]></property>
+            <property name="Text19"><![CDATA[]]></property>
+            <property name="Text20"><![CDATA[]]></property>
+            <property name="Text21"><![CDATA[]]></property>
+            <property name="Text22" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.CVEID",
+"ActualExprtessionString":"Methodb1e0b7b26f9947269806d769cfb0173d(_context,\"!!!XmlVar!!!.SkValueIterator.CVEID\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.CVEID",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Methodb1e0b7b26f9947269806d769cfb0173d(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.CVEID#Methodb1e0b7b26f9947269806d769cfb0173d(_context,\"!!!XmlVar!!!.SkValueIterator.CVEID\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[35bca90a4ecf49509db965516d54f97d]]></classname>
+                </expression>
+            </property>
+            <property name="Text23"><![CDATA[]]></property>
+            <property name="Text24"><![CDATA[]]></property>
+            <property name="Text25"><![CDATA[]]></property>
+            <property name="Text26"><![CDATA[]]></property>
+            <property name="Text27"><![CDATA[]]></property>
+            <property name="Text28"><![CDATA[]]></property>
+            <property name="Text29"><![CDATA[]]></property>
+            <property name="Text30"><![CDATA[]]></property>
+            <property name="Text31"><![CDATA[]]></property>
+            <property name="Text32"><![CDATA[]]></property>
+            <property name="Text33"><![CDATA[]]></property>
+            <property name="Text34"><![CDATA[]]></property>
+            <property name="Text35"><![CDATA[]]></property>
+            <property name="Text36"><![CDATA[]]></property>
+            <property name="Text37"><![CDATA[]]></property>
+            <property name="Text38"><![CDATA[]]></property>
+            <property name="Text39"><![CDATA[]]></property>
+            <property name="Text40"><![CDATA[]]></property>
+            <property name="Text41"><![CDATA[]]></property>
+            <property name="Text42"><![CDATA[]]></property>
+            <property name="Text43"><![CDATA[]]></property>
+            <property name="Text44"><![CDATA[]]></property>
+            <property name="Text45"><![CDATA[]]></property>
+            <property name="Text46"><![CDATA[]]></property>
+            <property name="Text47"><![CDATA[]]></property>
+            <property name="Text48"><![CDATA[]]></property>
+            <property name="Text49"><![CDATA[]]></property>
+            <property name="Text50"><![CDATA[]]></property>
+            <property name="Text51"><![CDATA[]]></property>
+            <property name="Text52"><![CDATA[]]></property>
+            <property name="Text53"><![CDATA[]]></property>
+            <property name="Text54"><![CDATA[]]></property>
+            <property name="Text55"><![CDATA[]]></property>
+            <property name="Text56"><![CDATA[]]></property>
+            <property name="Text57"><![CDATA[]]></property>
+            <property name="Text58"><![CDATA[]]></property>
+            <property name="Text59"><![CDATA[]]></property>
+            <property name="Text60"><![CDATA[]]></property>
+            <property name="Text61"><![CDATA[]]></property>
+            <property name="Text62"><![CDATA[]]></property>
+            <property name="Text63"><![CDATA[]]></property>
+            <property name="Text64"><![CDATA[]]></property>
+            <property name="Text65"><![CDATA[]]></property>
+            <property name="Text66"><![CDATA[]]></property>
+            <property name="Text67"><![CDATA[]]></property>
+            <property name="Text68"><![CDATA[]]></property>
+            <property name="Text69"><![CDATA[]]></property>
+            <property name="Text70"><![CDATA[]]></property>
+            <property name="Text71"><![CDATA[]]></property>
+            <property name="Text72"><![CDATA[]]></property>
+            <property name="Text73"><![CDATA[]]></property>
+            <property name="Text74"><![CDATA[]]></property>
+            <property name="Text75"><![CDATA[]]></property>
+            <property name="Text76"><![CDATA[]]></property>
+            <property name="Text77"><![CDATA[]]></property>
+            <property name="Text78"><![CDATA[]]></property>
+            <property name="Text79"><![CDATA[]]></property>
+            <property name="Text80"><![CDATA[]]></property>
+            <property name="Text81"><![CDATA[]]></property>
+            <property name="Text82"><![CDATA[]]></property>
+            <property name="Text83"><![CDATA[]]></property>
+            <property name="Text84"><![CDATA[]]></property>
+            <property name="Text85"><![CDATA[]]></property>
+            <property name="Text86"><![CDATA[]]></property>
+            <property name="Text87"><![CDATA[]]></property>
+            <property name="Text88"><![CDATA[]]></property>
+            <property name="Text89"><![CDATA[]]></property>
+            <property name="Text90"><![CDATA[]]></property>
+            <property name="Text91"><![CDATA[]]></property>
+            <property name="Text92"><![CDATA[]]></property>
+            <property name="Text93"><![CDATA[]]></property>
+            <property name="Text94"><![CDATA[]]></property>
+            <property name="Text95"><![CDATA[]]></property>
+            <property name="Text96"><![CDATA[]]></property>
+            <property name="Text97"><![CDATA[]]></property>
+            <property name="Text98"><![CDATA[]]></property>
+            <property name="Text99"><![CDATA[]]></property>
+            <property name="Text100"><![CDATA[]]></property>
+            <property name="Date1"><![CDATA[]]></property>
+            <property name="Date2"><![CDATA[]]></property>
+            <property name="Date3"><![CDATA[]]></property>
+            <property name="Date4"><![CDATA[]]></property>
+            <property name="Date5"><![CDATA[]]></property>
+            <property name="List1"><![CDATA[]]></property>
+            <property name="List2"><![CDATA[]]></property>
+            <property name="List3"><![CDATA[]]></property>
+            <property name="List4"><![CDATA[]]></property>
+            <property name="List5"><![CDATA[]]></property>
+            <property name="Description" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.Threat",
+"ActualExprtessionString":"Methodccf3c6169d894c878e0b46dd375d6d28(_context,\"!!!XmlVar!!!.SkValueIterator.Threat\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.Threat",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Methodccf3c6169d894c878e0b46dd375d6d28(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.Threat#Methodccf3c6169d894c878e0b46dd375d6d28(_context,\"!!!XmlVar!!!.SkValueIterator.Threat\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[ee559aeead3e4788b4d36baca48afa20]]></classname>
+                </expression>
+            </property>
+            <property name="Details" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.Impact",
+"ActualExprtessionString":"Methodacfa030b2a0d46859f4f1bf73acf3ea2(_context,\"!!!XmlVar!!!.SkValueIterator.Impact\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.Impact",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method9904fe67176a474f9e4c5ff47235817c(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n#private object  Methodacfa030b2a0d46859f4f1bf73acf3ea2(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.Results#Method9904fe67176a474f9e4c5ff47235817c(_context,\"!!!XmlVar!!!.SkValueIterator.Results\")$XmlVariables.SkValueIterator.Impact#Methodacfa030b2a0d46859f4f1bf73acf3ea2(_context,\"!!!XmlVar!!!.SkValueIterator.Impact\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[86c3b2eed8844e16a3fee6741416d615]]></classname>
+                </expression>
+            </property>
+            <property name="Notes" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SkValueIterator.Results",
+"ActualExprtessionString":"Method82e6ec04a7c84986a84cec985309c455(_context,\"!!!XmlVar!!!.SkValueIterator.Results\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SkValueIterator.Results",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method82e6ec04a7c84986a84cec985309c455(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SkValueIterator.Results#Method82e6ec04a7c84986a84cec985309c455(_context,\"!!!XmlVar!!!.SkValueIterator.Results\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[abf1090049284ba6a94f9da30a2561ba]]></classname>
+                </expression>
+            </property>
+            <property name="EventSource"><![CDATA[]]></property>
+            <property name="EventSourceReference"><![CDATA[]]></property>
+            <property name="TransUser"><![CDATA[]]></property>
+            <property name="Flag"><![CDATA[0]]></property>
+            <property name="Output"><![CDATA[Variable.varResult]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>575</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="ForEach-Loop1" type="ForEach-Loop" displayname="ForEach-Loop" description="" looponoutput="">
+        <properties>
+            <property name="XmlIterator"><![CDATA[SkValueIterator]]></property>
+            <property name="Execution"><![CDATA[Serial]]></property>
+            <property name="StopOnExceptions"><![CDATA[Yes]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>325</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Next Loop1" type="Next-Loop" displayname="Next-Loop" description="" looponoutput="">
+        <properties />
+        <visual-attributes>
+            <left>450</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>275</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Start" type="Start" displayname="" description="" looponoutput="">
+        <properties>
+            <property name="Variables"><![CDATA[0001#00290002$0009varResult$0006string]]></property>
+            <property name="Contents"><![CDATA[]]></property>
+            <property name="XmlVariables">
+                <XmlVariables>
+                    <XmlVariable>
+                        <Name><![CDATA[SKEventData]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlDocument]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="SKEventData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EventProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Key" type="xs:string" />
+                    <xs:element name="Value" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EventType" />
+        <xs:element name="EventProvider" />
+        <xs:element name="EventDateTimeUTC" type="xs:string" />
+        <xs:element name="EventDateTime" type="xs:string" />
+        <xs:element name="UserId" />
+        <xs:element name="UserName" />
+        <xs:element name="EventContextVariableName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xsd:schema>]]></Schema>
+                        <Xsl><![CDATA[]]></Xsl>
+                        <Storage>
+                            <InternalStorage><![CDATA[variables]]></InternalStorage>
+                        </Storage>
+                    </XmlVariable>
+                    <XmlVariable>
+                        <Name><![CDATA[SkValue]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlDocument]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Item">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IP" type="xs:string" />
+              <xs:element name="Network" type="xs:string" />
+              <xs:element name="DNS" type="xs:string" />
+              <xs:element name="NetBIOS" type="xs:string" />
+              <xs:element name="TrackingMethod" type="xs:string" />
+              <xs:element name="OS" type="xs:string" />
+              <xs:element name="IPStatus" type="xs:string" />
+              <xs:element name="QID" type="xs:string" />
+              <xs:element name="Title" type="xs:string" />
+              <xs:element name="VulnStatus" type="xs:string" />
+              <xs:element name="Type" type="xs:string" />
+              <xs:element name="Severity" type="xs:string" />
+              <xs:element name="Port" type="xs:string" />
+              <xs:element name="Protocol" type="xs:string" />
+              <xs:element name="FQDN" type="xs:string" />
+              <xs:element name="SSL" type="xs:string" />
+              <xs:element name="FirstDetected" type="xs:string" />
+              <xs:element name="LastDetected" type="xs:string" />
+              <xs:element name="TimesDetected" type="xs:string" />
+              <xs:element name="DateLastFixed" type="xs:string" />
+              <xs:element name="CVEID" type="xs:string" />
+              <xs:element name="VendorReference" type="xs:string" />
+              <xs:element name="BugtraqID" type="xs:string" />
+              <xs:element name="Threat" type="xs:string" />
+              <xs:element name="Impact" type="xs:string" />
+              <xs:element name="Solution" type="xs:string" />
+              <xs:element name="Exploitability" type="xs:string" />
+              <xs:element name="AssociatedMalware" type="xs:string" />
+              <xs:element name="Results" type="xs:string" />
+              <xs:element name="PCIVuln" type="xs:string" />
+              <xs:element name="TicketState" type="xs:string" />
+              <xs:element name="Instance" type="xs:string" />
+              <xs:element name="Category" type="xs:string" />
+              <xs:element name="QDS" type="xs:string" />
+              <xs:element name="ARS" type="xs:string" />
+              <xs:element name="ACS" type="xs:string" />
+              <xs:element name="TruRiskScore" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></Schema>
+                        <Xsl><![CDATA[                                         ]]></Xsl>
+                        <Storage>
+                            <InternalStorage><![CDATA[variables]]></InternalStorage>
+                        </Storage>
+                    </XmlVariable>
+                    <XmlVariable>
+                        <Name><![CDATA[SkValueIterator]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlIterator]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[]]></Schema>
+                        <Xsl><![CDATA[]]></Xsl>
+                        <Storage>
+                            <ParentVariable><![CDATA[SkValue~XmlDocument]]></ParentVariable>
+                            <ParentNodeXPath><![CDATA[$$Data$Item]]></ParentNodeXPath>
+                            <CreateNewNode><![CDATA[No]]></CreateNewNode>
+                            <VariableXPath><![CDATA[$Item]]></VariableXPath>
+                        </Storage>
+                    </XmlVariable>
+                </XmlVariables>
+            </property>
+            <property name="ExecutionView"><![CDATA[]]></property>
+            <property name="SOAObjects">
+                <SOAObjects />
+            </property>
+            <property name="Initialize Variable(s)">
+                <contentupdationfields>
+                    <classname><![CDATA[9f00759e0f2f49a48ea2344a25199146]]></classname>
+                    <jstring><![CDATA[]]></jstring>
+                </contentupdationfields>
+            </property>
+            <property name="Raise Exception if Completion Maker Output is not linked?"><![CDATA[Yes]]></property>
+            <property name="ExceptionTemplate">
+                <workflowmemovalue>
+                    <height><![CDATA[350]]></height>
+                    <width><![CDATA[650]]></width>
+                    <value><![CDATA[]]></value>
+                    <valueHTML><![CDATA[]]></valueHTML>
+                </workflowmemovalue>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>100</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <link from="Start" to="ForEach-Loop1" condition="" description="" name="Link0">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>165</sourceportfinalx>
+            <sourceportfinaly>108</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>325</targetportfinalx>
+            <targetportfinaly>108</targetportfinaly>
+            <serializedpath>Link0;false;2;245;108;Link0,right,0,197,108,165,108,false,false,NaN,NaN,!,,Link0_0,;Link0,,0,197,108,197,108,false,false,NaN,NaN,!,,Link0_1,;Link0,right,0,293,108,197,108,false,true,245,108,!,,Link0_2,;Link0,,0,293,108,293,108,false,false,NaN,NaN,!,,Link0_3,;Link0,right,0,325,108,293,108,true,false,NaN,NaN,!,,Link0_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="ForEach-Loop1" to="Create Tool Event1" condition="Step" description="" name="Link1">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>390</sourceportfinalx>
+            <sourceportfinaly>108</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>575</targetportfinalx>
+            <targetportfinaly>108</targetportfinaly>
+            <serializedpath>Link1;false;2;482;108;Link1,right,0,427,108,390,108,false,false,NaN,NaN,!,,Link1_0,;Link1,,0,427,108,427,108,false,false,NaN,NaN,!,,Link1_1,;Link1,right,0,538,108,427,108,false,true,482,108,!,,Link1_2,;Link1,,0,538,108,538,108,false,false,NaN,NaN,!,,Link1_3,;Link1,right,0,575,108,538,108,true,false,NaN,NaN,!,,Link1_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Create Tool Event1" to="Next Loop1" condition="Failure" description="" name="Link2">
+        <visual-attributes>
+            <sourceport>b</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>b</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>608</sourceportfinalx>
+            <sourceportfinaly>140</sourceportfinaly>
+            <targetport>t</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>t</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>483</targetportfinalx>
+            <targetportfinaly>275</targetportfinaly>
+            <serializedpath>Link2;false;3;598;260;Link2,down,0,608,164,608,140,false,false,NaN,NaN,!,,Link2_0,;Link2,,0,608,164,608,164,false,false,NaN,NaN,!,,Link2_1,;Link2,down,0,608,260,608,164,false,true,608,212,!,,Link2_2,;Link2,left,0,483,260,608,260,false,true,545,260,!,,Link2_3,;Link2,down,0,483,272,483,260,false,false,0,0,!,,Link2_4,;Link2,,0,483,272,483,272,false,false,NaN,NaN,!,,Link2_5,;Link2,down,0,483,275,483,272,true,false,NaN,NaN,!,,Link2_6,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Next Loop1" to="ForEach-Loop1" condition="Next Step" description="" name="Link3">
+        <visual-attributes>
+            <sourceport>l</sourceport>
+            <sourceportside>l</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>l</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>450</sourceportfinalx>
+            <sourceportfinaly>308</sourceportfinaly>
+            <targetport>b</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>b</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>358</targetportfinalx>
+            <targetportfinaly>140</targetportfinaly>
+            <serializedpath>Link3;true;0;358;270;Link3,left,0,432,308,450,308,false,false,450,308,!,,Link3_0,;Link3,,0,432,308,432,308,false,false,NaN,NaN,!,,Link3_1,;Link3,left,0,358,308,432,308,false,true,395,308,!,,Link3_2,;Link3,up,0,358,173,358,308,false,true,358,240,!,,Link3_3,;Link3,,0,358,173,358,173,false,false,NaN,NaN,!,,Link3_4,;Link3,up,0,358,140,358,173,true,false,358,140,!,,Link3_5,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+</workflow>

@@ -1,0 +1,288 @@
+<workflow name="" version="2">
+    <diagramdatacollection>
+        <diagramdata key="DesignerInstanceId"><![CDATA[e5a987659e4548728107835cbfd7d531]]></diagramdata>
+    </diagramdatacollection>
+    <action name="Get Qualys Report" type="WebAPIEx" displayname="WebAPIEx" description="" looponoutput="">
+        <properties>
+            <property name="HttpMethod"><![CDATA[GET]]></property>
+            <property name="BaseAddress"><![CDATA[https://qualysguard.qg1.apps.qualys.in/]]></property>
+            <property name="RequestURI"><![CDATA[api/2.0/fo/report/?action=fetch&id=5861095]]></property>
+            <property name="QueryData"><![CDATA[]]></property>
+            <property name="ContentType"><![CDATA[application/json]]></property>
+            <property name="PostData"><![CDATA[]]></property>
+            <property name="PostDataVariable"><![CDATA[]]></property>
+            <property name="Authentication"><![CDATA[Basic]]></property>
+            <property name="AuthHeader"><![CDATA[dG5mdGU4YWIyOnJvdnFvZC1zZXpHYXAtcGlyamkz]]></property>
+            <property name="AdditionalHeaders"><![CDATA[X-Requested-With:alertfusion]]></property>
+            <property name="AcceptHeader"><![CDATA[application/json]]></property>
+            <property name="Output"><![CDATA[Variable.varResult]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>275</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Save CSV file " type="Script" displayname="Script" description="" looponoutput="">
+        <properties>
+            <property name="Language"><![CDATA[CSharp.NET]]></property>
+            <property name="Code">
+                <value><![CDATA[using System; 
+
+using System.IO;
+ using Workflow.NET;
+ using Workflow.NET.Engine;
+
+ public class WorkflowScript8f15f164fb0d47da8061942f632c4ee1
+ {
+ public string Run(int ExecutionId, int ExecutionDetailsId, Workflow.NET.Engine.Context ctx, Workflow.NET.Action action, string inlink)
+ {
+ try{ 
+
+ string folderPath = @"C:\Program Files\AlertFusion\Temp\Qualys"; 
+
+  if (!Directory.Exists(folderPath))
+   {
+       Directory.CreateDirectory(folderPath);
+   }
+   string reportId = ctx.Variables["varReportId"].Value.ToString(); 
+
+  string fileName = "QualysReport_"+reportId+".csv"; 
+
+  string filePath = Path.Combine(folderPath, fileName); 
+
+  string content =  ctx.Variables["varResult"].Value.ToString(); 
+
+  File.WriteAllText(filePath, content);         
+
+return "Success"; 
+
+} 
+
+catch(Exception e) {return "Failure";}
+ } 
+ }]]></value>
+                <valueHTML><![CDATA[<p>
+<br />
+using System;</p>
+<p>using System.IO;<br />
+using Workflow.NET;<br />
+using Workflow.NET.Engine;<br />
+<br />
+public class WorkflowScript8f15f164fb0d47da8061942f632c4ee1<br />
+{<br />
+public string Run(int ExecutionId, int ExecutionDetailsId, Workflow.NET.Engine.Context ctx, Workflow.NET.Action action, string inlink)<br />
+{<br />
+try{</p>
+<p>&nbsp;string folderPath = @"C:\Program Files\AlertFusion\Temp\Qualys";</p>
+<p>&nbsp; if (!Directory.Exists(folderPath))<br />
+&nbsp; {<br />
+&nbsp; &nbsp; &nbsp; Directory.CreateDirectory(folderPath);<br />
+&nbsp; }<br />
+&nbsp; string reportId = ctx.Variables["varReportId"].Value.ToString();</p>
+<p>&nbsp; string fileName = "QualysReport_"+reportId+".csv";</p>
+<p>&nbsp; string filePath = Path.Combine(folderPath, fileName);</p>
+<p>&nbsp; string content = &nbsp;ctx.Variables["varResult"].Value.ToString();</p>
+<div>&nbsp; File.WriteAllText(filePath, content);&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>
+<p>return "Success";</p>
+<p>}</p>
+<p>catch(Exception e) {return "Failure";}<br />
+}&nbsp;<br />
+}</p>
+<br />]]></valueHTML>
+            </property>
+            <property name="References"><![CDATA[]]></property>
+            <property name="Return Values"><![CDATA[0002#00160001$0007Success#00160001$0007Failure]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>450</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Start" type="Start" displayname="" description="" looponoutput="">
+        <properties>
+            <property name="Variables"><![CDATA[0002#00290002$0009varResult$0006string#00310002$0011varReportId$0006string]]></property>
+            <property name="Contents"><![CDATA[]]></property>
+            <property name="XmlVariables">
+                <XmlVariables>
+                    <XmlVariable>
+                        <Name><![CDATA[SKEventData]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlDocument]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="SKEventData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EventProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Key" type="xs:string" />
+                    <xs:element name="Value" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EventType" />
+        <xs:element name="EventProvider" />
+        <xs:element name="EventDateTimeUTC" type="xs:string" />
+        <xs:element name="EventDateTime" type="xs:string" />
+        <xs:element name="UserId" />
+        <xs:element name="UserName" />
+        <xs:element name="EventContextVariableName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xsd:schema>]]></Schema>
+                        <Xsl><![CDATA[]]></Xsl>
+                        <Storage>
+                            <InternalStorage><![CDATA[variables]]></InternalStorage>
+                        </Storage>
+                    </XmlVariable>
+                    <XmlVariable>
+                        <Name><![CDATA[XEvents]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlDocument]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root" />
+</xs:schema>]]></Schema>
+                        <Xsl><![CDATA[                                         ]]></Xsl>
+                        <Storage>
+                            <InternalStorage><![CDATA[variables]]></InternalStorage>
+                        </Storage>
+                    </XmlVariable>
+                    <XmlVariable>
+                        <Name><![CDATA[XQualysData]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlDocument]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root" />
+</xs:schema>]]></Schema>
+                        <Xsl><![CDATA[                                         ]]></Xsl>
+                        <Storage>
+                            <InternalStorage><![CDATA[variables]]></InternalStorage>
+                        </Storage>
+                    </XmlVariable>
+                </XmlVariables>
+            </property>
+            <property name="ExecutionView"><![CDATA[]]></property>
+            <property name="SOAObjects">
+                <SOAObjects />
+            </property>
+            <property name="Initialize Variable(s)">
+                <contentupdationfields>
+                    <contentupdationfield name="Variable.varReportId" operator="" mode="Default" methodName="cbcb716b96054fb5b2536a21e4178085"><![CDATA[8899]]></contentupdationfield>
+                    <classname><![CDATA[e9a3c72e27e448b0bf6a18f03895cac1]]></classname>
+                    <jstring><![CDATA[[{"RHSMode":"Default",
+"LHSColumn":"Variable.varReportId",
+"RHSColumn":"8899",
+"OPRColumn":"",
+"ColumnExpression":{"DisplayExpressionString":"",
+"ActualExprtessionString":"",
+"MethodParameterList":"",
+"HtmlVerexpString":"",
+"ReferenceList":"",
+"ReferencedFunctionList":"",
+"NodeInfo":""}}]]]></jstring>
+                </contentupdationfields>
+            </property>
+            <property name="Raise Exception if Completion Maker Output is not linked?"><![CDATA[Yes]]></property>
+            <property name="ExceptionTemplate">
+                <workflowmemovalue>
+                    <height><![CDATA[350]]></height>
+                    <width><![CDATA[650]]></width>
+                    <value><![CDATA[]]></value>
+                    <valueHTML><![CDATA[]]></valueHTML>
+                </workflowmemovalue>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>100</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <link from="Start" to="Get Qualys Report" condition="" description="" name="Link0">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>165</sourceportfinalx>
+            <sourceportfinaly>108</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>275</targetportfinalx>
+            <targetportfinaly>108</targetportfinaly>
+            <serializedpath>Link0;false;2;220;108;Link0,right,0,187,108,165,108,false,false,NaN,NaN,!,,Link0_0,;Link0,,0,187,108,187,108,false,false,NaN,NaN,!,,Link0_1,;Link0,right,0,253,108,187,108,false,true,220,108,!,,Link0_2,;Link0,,0,253,108,253,108,false,false,NaN,NaN,!,,Link0_3,;Link0,right,0,275,108,253,108,true,false,NaN,NaN,!,,Link0_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Get Qualys Report" to="Save CSV file " condition="Success" description="" name="Link1">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>340</sourceportfinalx>
+            <sourceportfinaly>108</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>450</targetportfinalx>
+            <targetportfinaly>108</targetportfinaly>
+            <serializedpath>Link1;false;2;395;108;Link1,right,0,362,108,340,108,false,false,NaN,NaN,!,,Link1_0,;Link1,,0,362,108,362,108,false,false,NaN,NaN,!,,Link1_1,;Link1,right,0,428,108,362,108,false,true,395,108,!,,Link1_2,;Link1,,0,428,108,428,108,false,false,NaN,NaN,!,,Link1_3,;Link1,right,0,450,108,428,108,true,false,NaN,NaN,!,,Link1_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+</workflow>
