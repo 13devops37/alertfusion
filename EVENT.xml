@@ -1,0 +1,1027 @@
+<workflow name="" version="2">
+    <diagramdatacollection>
+        <diagramdata key="DesignerInstanceId"><![CDATA[b4f91b55db0b4c5ca61f22cb6a8b2090]]></diagramdata>
+    </diagramdatacollection>
+    <action name="Add Context Notes" type="AddContextNotes" displayname="Add Context Notes" description="" looponoutput="">
+        <properties>
+            <property name="BaseAddress"><![CDATA[http://localhost:9000/]]></property>
+            <property name="Authentication"><![CDATA[Basic]]></property>
+            <property name="AuthHeader"><![CDATA[YXBpdXNlcjpBY3QxVkB0ZQ==]]></property>
+            <property name="EventId" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SKEvent.WFEvent.EventId",
+"ActualExprtessionString":"Methodac808d00749d4fd88021d6c8466cdc08(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SKEvent.WFEvent.EventId",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Methodac808d00749d4fd88021d6c8466cdc08(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SKEvent.WFEvent.EventId#Methodac808d00749d4fd88021d6c8466cdc08(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[7c62b06147f34146a1ba1e805453c5d8]]></classname>
+                </expression>
+            </property>
+            <property name="Output"><![CDATA[Variable.varResult]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>200</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Check if Closed or Not" type="Decision" displayname="Decision" description="" looponoutput="">
+        <properties>
+            <property name="Decisions">
+                <Decisions>
+                    <JSDecisonString><![CDATA[[{"ConditionString":"[{\"LHSBrace\":\"\",\n\"LHSColumn\":{\"DisplayText\":\"Variable.varResult\",\n\"Actualtext\":\"_context.Variables[\\\"varResult\\\"].Value\",\n\"DataType\":\"string\",\n\"RefFunction\":\"\",\n\"ParamList\":\"Workflow.NET.Engine.Context _context\",\n\"ColumnMode\":\"default\",\n\"ColumnExpression\":{\"DisplayExpressionString\":\"\",\n\"ActualExprtessionString\":\"\",\n\"MethodParameterList\":\"\",\n\"HtmlVerexpString\":\"\",\n\"ReferenceList\":\"\",\n\"ReferencedFunctionList\":\"\",\n\"NodeInfo\":\"\"}},\n\"MHSActualText\":\"EQ\",\n\"MHSDisplayText\":\"Equals\",\n\"RHSColumn\":{\"DisplayText\":\"false\",\n\"Actualtext\":\"\",\n\"DataType\":\"\",\n\"RefFunction\":\"\",\n\"ParamList\":\"\",\n\"ColumnMode\":\"default\",\n\"ColumnExpression\":{\"DisplayExpressionString\":\"\",\n\"ActualExprtessionString\":\"\",\n\"MethodParameterList\":\"\",\n\"HtmlVerexpString\":\"\",\n\"ReferenceList\":\"\",\n\"ReferencedFunctionList\":\"\",\n\"NodeInfo\":\"\"},\n\"ActualText\":\"false\"},\n\"LHSMode\":\"default\",\n\"RHSMode\":\"default\",\n\"LogicalOpr\":\"\",\n\"RHSValue\":\"false\",\n\"RHSBrace\":\"\",\n\"OprValidate\":\"no\",\n\"IsRHSExists\":true}]",
+"OutPut":"NOT_CLOSED",
+"HaltExecution":false},
+{"ConditionString":"Else",
+"OutPut":"CLOSED",
+"HaltExecution":false}]]]></JSDecisonString>
+                    <classname><![CDATA[32110a0df2664a2687d139d2fd2120de]]></classname>
+                </Decisions>
+            </property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>575</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Check if False Positive" type="Decision" displayname="Decision" description="" looponoutput="">
+        <properties>
+            <property name="Decisions">
+                <Decisions>
+                    <JSDecisonString><![CDATA[[{"ConditionString":"[{\"LHSBrace\":\"\",\n\"LHSColumn\":{\"DisplayText\":\"XmlVariables.PastEventIterator.Outcm\",\n\"Actualtext\":\"Methodb74cba25adf445d5962eb25eb52ee881(_context,\\\"!!!XmlVar!!!.PastEventIterator.Outcm\\\")\",\n\"DataType\":\"System.String\",\n\"RefFunction\":\"private object  Methodb74cba25adf445d5962eb25eb52ee881(Workflow.NET.Engine.Context _context,string variableName){\\nstring nodeText = variableName.Substring(13);\\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\\\"//\\\" _x002B_ xpath);\\nif (values == null) values = new object[] { \\\"\\\" };\\nreturn values[0];\\n}\\n\",\n\"ParamList\":\"Workflow.NET.Engine.Context _context\",\n\"ColumnMode\":\"default\",\n\"ColumnExpression\":{\"DisplayExpressionString\":\"\",\n\"ActualExprtessionString\":\"\",\n\"MethodParameterList\":\"\",\n\"HtmlVerexpString\":\"\",\n\"ReferenceList\":\"\",\n\"ReferencedFunctionList\":\"\",\n\"NodeInfo\":\"\"}},\n\"MHSActualText\":\"EQ\",\n\"MHSDisplayText\":\"Equals\",\n\"RHSColumn\":{\"DisplayText\":\"FP\",\n\"Actualtext\":\"\",\n\"DataType\":\"\",\n\"RefFunction\":\"\",\n\"ParamList\":\"\",\n\"ColumnMode\":\"default\",\n\"ColumnExpression\":{\"DisplayExpressionString\":\"\",\n\"ActualExprtessionString\":\"\",\n\"MethodParameterList\":\"\",\n\"HtmlVerexpString\":\"\",\n\"ReferenceList\":\"\",\n\"ReferencedFunctionList\":\"\",\n\"NodeInfo\":\"\"},\n\"ActualText\":\"FP\"},\n\"LHSMode\":\"default\",\n\"RHSMode\":\"default\",\n\"LogicalOpr\":\"\",\n\"RHSValue\":\"FP\",\n\"RHSBrace\":\"\",\n\"OprValidate\":\"no\",\n\"IsRHSExists\":true}]",
+"OutPut":"True",
+"HaltExecution":false},
+{"ConditionString":"Else",
+"OutPut":"False",
+"HaltExecution":false}]]]></JSDecisonString>
+                    <classname><![CDATA[302ef665d86347f096844b9bf4bbf513]]></classname>
+                </Decisions>
+            </property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>1250</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>225</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Close Event1" type="Close Event" displayname="Close Event" description="" looponoutput="">
+        <properties>
+            <property name="BaseAddress"><![CDATA[http://localhost:9000/]]></property>
+            <property name="Authentication"><![CDATA[Basic]]></property>
+            <property name="AuthHeader"><![CDATA[YXBpdXNlcjpBY3QxVkB0ZQ==]]></property>
+            <property name="EventId" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SKEvent.WFEvent.EventId",
+"ActualExprtessionString":"Methodbc353658d1504192b90c490a069a2726(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SKEvent.WFEvent.EventId",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method5d63e068407e4e3da389d4c595047b08(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n#private object  Methodbc353658d1504192b90c490a069a2726(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.PastEventIterator.EventId#Method5d63e068407e4e3da389d4c595047b08(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$Variable.varEventId#_context.Variables[\"varEventId\"].Value$XmlVariables.SKEvent.WFEvent.EventId#Methodbc353658d1504192b90c490a069a2726(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")$XmlVariables.SKEvent.WFEvent.EventId#Methodbc353658d1504192b90c490a069a2726(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[3c7df2bb8b214597bd1cde7e657e17e8]]></classname>
+                </expression>
+            </property>
+            <property name="Outcm"><![CDATA[FP]]></property>
+            <property name="Cloct"><![CDATA[]]></property>
+            <property name="Closc"><![CDATA[]]></property>
+            <property name="CloseStatus"><![CDATA[]]></property>
+            <property name="Comments" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"string retval = \"\";retval += \"Event is auto closed for being found as False Positive similar to  \" + Variable.varEventIds.ToString() + \".\";return retval;",
+"ActualExprtessionString":"string retval = \"\";retval += \"Event is auto closed for being found as False Positive similar to  \" + _context.Variables[\"varEventIds\"].Value.ToString() + \".\";return retval;",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"&lt;p&gt;string retval = \"\";&lt;/p&gt;&lt;p&gt;retval += \"Event is auto closed for being found as False Positive similar to&nbsp; \" +&nbsp;Variable.varEventIds.ToString() + \".\";&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;return retval;&lt;/p&gt;",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"",
+"NodeInfo":"Variable.varEventIds#_context.Variables[\"varEventIds\"].Value",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[90f12cb441bb4526980238b130606965]]></classname>
+                </expression>
+            </property>
+            <property name="TransUser"><![CDATA[]]></property>
+            <property name="Output"><![CDATA[Variable.varCloseOutput]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>775</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>375</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Close if Exact Event1" type="Close if Exact Event" displayname="Close if Exact Event" description="" looponoutput="">
+        <properties>
+            <property name="BaseAddress"><![CDATA[http://localhost:9000/]]></property>
+            <property name="Authentication"><![CDATA[Basic]]></property>
+            <property name="AuthHeader"><![CDATA[YXBpdXNlcjpBY3QxVkB0ZQ==]]></property>
+            <property name="EventId" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SKEvent.WFEvent.EventId",
+"ActualExprtessionString":"Method47deee1cad934f36bc484b7049b34c7a(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SKEvent.WFEvent.EventId",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method208098850d00425290af135abde6c0d8(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n#private object  Method47deee1cad934f36bc484b7049b34c7a(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SKEvent.WFEvent.EventId#Method208098850d00425290af135abde6c0d8(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")$Variable.varEventId#_context.Variables[\"varEventId\"].Value$XmlVariables.SKEvent.WFEvent.EventId#Method47deee1cad934f36bc484b7049b34c7a(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[127d8f600d4a4835b15a1822df8fa705]]></classname>
+                </expression>
+            </property>
+            <property name="Outcm"><![CDATA[DU]]></property>
+            <property name="Cloct"><![CDATA[]]></property>
+            <property name="Closc"><![CDATA[]]></property>
+            <property name="Comments"><![CDATA[]]></property>
+            <property name="TransUser"><![CDATA[]]></property>
+            <property name="Output"><![CDATA[Variable.varResult]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>375</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="ConvertToXML1" type="ConvertToXML" displayname="ConvertToXML" description="" looponoutput="">
+        <properties>
+            <property name="InputVariable"><![CDATA[Variable.varOutput]]></property>
+            <property name="RootElement"><![CDATA[PAST_CLOSED_EVENTS]]></property>
+            <property name="IsJsonArray"><![CDATA[YES]]></property>
+            <property name="SaveOutput"><![CDATA[SKPastEvents]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>800</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>225</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Create ServiceNow Incident" type="Workflow" displayname="Workflow" description="" looponoutput="">
+        <properties>
+            <property name="Application"><![CDATA[SocViewRP]]></property>
+            <property name="Workflow"><![CDATA[CREATE INCIDENT]]></property>
+            <property name="Version"><![CDATA[]]></property>
+            <property name="Contents for ChildWorkflow"><![CDATA[]]></property>
+            <property name="Variables for ChildWorkflow"><![CDATA[]]></property>
+            <property name="XmlVariables for ChildWorkflow"><![CDATA[SKEvent|XmlDocument|]]></property>
+            <property name="Wait for the child workflow?"><![CDATA[No]]></property>
+            <property name="Execution mode"><![CDATA[Asynchronous]]></property>
+            <property name="Control child workflow?"><![CDATA[No]]></property>
+            <property name="Support Blocking Output?"><![CDATA[No]]></property>
+            <property name="Return Values"><![CDATA[]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>925</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>525</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="False Positive Exists" type="Decision" displayname="Decision" description="" looponoutput="">
+        <properties>
+            <property name="Decisions">
+                <Decisions>
+                    <JSDecisonString><![CDATA[[{"ConditionString":"[{\"LHSBrace\":\"\",\n\"LHSColumn\":{\"DisplayText\":\"Variable.varEventIds\",\n\"Actualtext\":\"_context.Variables[\\\"varEventIds\\\"].Value\",\n\"DataType\":\"string\",\n\"RefFunction\":\"\",\n\"ParamList\":\"Workflow.NET.Engine.Context _context\",\n\"ColumnMode\":\"default\",\n\"ColumnExpression\":{\"DisplayExpressionString\":\"\",\n\"ActualExprtessionString\":\"\",\n\"MethodParameterList\":\"\",\n\"HtmlVerexpString\":\"\",\n\"ReferenceList\":\"\",\n\"ReferencedFunctionList\":\"\",\n\"NodeInfo\":\"\"}},\n\"MHSActualText\":\"CD\",\n\"MHSDisplayText\":\"Contains Data\",\n\"RHSColumn\":{\"DisplayText\":\"\",\n\"Actualtext\":\"\",\n\"DataType\":\"\",\n\"RefFunction\":\"\",\n\"ParamList\":\"\",\n\"ColumnMode\":\"default\",\n\"ColumnExpression\":{\"DisplayExpressionString\":\"\",\n\"ActualExprtessionString\":\"\",\n\"MethodParameterList\":\"\",\n\"HtmlVerexpString\":\"\",\n\"ReferenceList\":\"\",\n\"ReferencedFunctionList\":\"\",\n\"NodeInfo\":\"\"}},\n\"LHSMode\":\"default\",\n\"RHSMode\":\"default\",\n\"LogicalOpr\":\"\",\n\"RHSValue\":\"\",\n\"RHSBrace\":\"\",\n\"OprValidate\":\"no\",\n\"IsRHSExists\":false}]",
+"OutPut":"True",
+"HaltExecution":false},
+{"ConditionString":"Else",
+"OutPut":"False",
+"HaltExecution":false}]]]></JSDecisonString>
+                    <classname><![CDATA[450a440e11ab444ab4e64cea86498d07]]></classname>
+                </Decisions>
+            </property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>925</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>375</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="ForEach-Loop1" type="ForEach-Loop" displayname="ForEach-Loop" description="" looponoutput="">
+        <properties>
+            <property name="XmlIterator"><![CDATA[PastEventIterator]]></property>
+            <property name="Execution"><![CDATA[Serial]]></property>
+            <property name="StopOnExceptions"><![CDATA[Yes]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>1050</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>225</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Get Past ExactEvent Outcome1" type="Get Past ExactEvent Outcome" displayname="Get Past ExactEvent Outcome" description="" looponoutput="">
+        <properties>
+            <property name="BaseAddress"><![CDATA[http://localhost:9000/]]></property>
+            <property name="Authentication"><![CDATA[Basic]]></property>
+            <property name="AuthHeader"><![CDATA[YXBpdXNlcjpBY3QxVkB0ZQ==]]></property>
+            <property name="EventId" isexpressionExists="True">
+                <expression>
+                    <jsexpression><![CDATA[{"DisplayExpressionString":"XmlVariables.SKEvent.WFEvent.EventId",
+"ActualExprtessionString":"Methoddfe95a8d34bc45f0aae32609b4d5ee71(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"XmlVariables.SKEvent.WFEvent.EventId",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Methoddfe95a8d34bc45f0aae32609b4d5ee71(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') + 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '/');object[] values = _context.XmlVariables[varname].GetNodeValues(\"//\" + xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"XmlVariables.SKEvent.WFEvent.EventId#Methoddfe95a8d34bc45f0aae32609b4d5ee71(_context,\"!!!XmlVar!!!.SKEvent.WFEvent.EventId\")",
+"ReturnType":"System.String"}]]></jsexpression>
+                    <classname><![CDATA[50ef164a81e4447faaba33d40538dd49]]></classname>
+                </expression>
+            </property>
+            <property name="Output"><![CDATA[Variable.varOutput]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>800</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Next Loop1" type="Next-Loop" displayname="Next-Loop" description="" looponoutput="">
+        <properties />
+        <visual-attributes>
+            <left>1050</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>425</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Start" type="Start" displayname="" description="" looponoutput="">
+        <properties>
+            <property name="Variables"><![CDATA[0009#00290002$0009varResult$0006string#00290002$0009varOutput$0006string#00300002$0010varEventId$0006string#00310002$0011varEventIds$0006string#00340002$0014varCloseOutput$0006string#00410002$0021varFalsePositiveExist$0006string#00270002$0007varHash$0006string#00250002$0005varIP$0006string#00260002$0006varURL$0006string]]></property>
+            <property name="Contents"><![CDATA[]]></property>
+            <property name="XmlVariables">
+                <XmlVariables>
+                    <XmlVariable>
+                        <Name><![CDATA[SKEventData]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlDocument]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="SKEventData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EventProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Property">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Key" type="xs:string" />
+                    <xs:element name="Value" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EventType" />
+        <xs:element name="EventProvider" />
+        <xs:element name="EventDateTimeUTC" type="xs:string" />
+        <xs:element name="EventDateTime" type="xs:string" />
+        <xs:element name="UserId" />
+        <xs:element name="UserName" />
+        <xs:element name="EventContextVariableName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xsd:schema>]]></Schema>
+                        <Xsl><![CDATA[]]></Xsl>
+                        <Storage>
+                            <InternalStorage><![CDATA[variables]]></InternalStorage>
+                        </Storage>
+                    </XmlVariable>
+                    <XmlVariable>
+                        <Name><![CDATA[SKEvent]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlDocument]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WFEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EventId" type="xs:string" />
+        <xs:element name="CustId" type="xs:string" />
+        <xs:element name="CustomerCode" type="xs:string" />
+        <xs:element name="CustomerName" type="xs:string" />
+        <xs:element name="EventDateTime" type="xs:dateTime" />
+        <xs:element name="DeviceType" type="xs:string" />
+        <xs:element name="AttackCategory" type="xs:string" />
+        <xs:element name="Details" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="Text1" type="xs:string" />
+        <xs:element name="Text2" type="xs:string" />
+        <xs:element name="Text3" type="xs:string" />
+        <xs:element name="Text4" type="xs:string" />
+        <xs:element name="Text5" type="xs:string" />
+        <xs:element name="Text6" type="xs:string" />
+        <xs:element name="Text7" type="xs:string" />
+        <xs:element name="Text8" type="xs:string" />
+        <xs:element name="Text9" type="xs:string" />
+        <xs:element name="Text10" type="xs:string" />
+        <xs:element name="Text11" type="xs:string" />
+        <xs:element name="Text12" type="xs:string" />
+        <xs:element name="Text13" type="xs:string" />
+        <xs:element name="Text14" type="xs:string" />
+        <xs:element name="Text15" type="xs:string" />
+        <xs:element name="Text16" type="xs:string" />
+        <xs:element name="Text17" type="xs:string" />
+        <xs:element name="Text18" type="xs:string" />
+        <xs:element name="Text19" type="xs:string" />
+        <xs:element name="Text20" type="xs:string" />
+        <xs:element name="Date1" type="xs:dateTime" />
+        <xs:element name="Date2" type="xs:dateTime" />
+        <xs:element name="Date3" type="xs:dateTime" />
+        <xs:element name="Date4" type="xs:dateTime" />
+        <xs:element name="Date5" type="xs:dateTime" />
+        <xs:element name="List1" type="xs:string" />
+        <xs:element name="List2" type="xs:string" />
+        <xs:element name="List3" type="xs:string" />
+        <xs:element name="List4" type="xs:string" />
+        <xs:element name="List5" type="xs:string" />
+        <xs:element name="Flag" type="xs:string" />
+        <xs:element name="CallCategory" type="xs:string" />
+        <xs:element name="CallConcern" type="xs:string" />
+        <xs:element name="Source">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IPAddress" type="xs:string" />
+              <xs:element name="Port" type="xs:string" />
+              <xs:element name="UserName" type="xs:string" />
+              <xs:element name="HostName" type="xs:string" />
+              <xs:element name="Email" type="xs:string" />
+              <xs:element name="Zone" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Destination">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IPAddress" type="xs:string" />
+              <xs:element name="Port" type="xs:string" />
+              <xs:element name="UserName" type="xs:string" />
+              <xs:element name="HostName" type="xs:string" />
+              <xs:element name="Email" type="xs:string" />
+              <xs:element name="Zone" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Attributes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WFEventAttribute">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="IPAddress" type="xs:string" />
+                    <xs:element name="Port" type="xs:string" />
+                    <xs:element name="UserName" type="xs:string" />
+                    <xs:element name="HostName" type="xs:string" />
+                    <xs:element name="Email" type="xs:string" />
+                    <xs:element name="Zone" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Priority" type="xs:string" />
+        <xs:element name="Outcome" type="xs:string" />
+        <xs:element name="Status" type="xs:string" />
+        <xs:element name="EventSource">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SorceId" type="xs:string" />
+              <xs:element name="EventSource" type="xs:string" />
+              <xs:element name="EventSourceReference" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="User">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserId" type="xs:string" />
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="UserName" type="xs:string" />
+              <xs:element name="References">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="UserReferenceEdit">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="UserReferenceId" type="xs:string" />
+                          <xs:element name="UserId" type="xs:string" />
+                          <xs:element name="UsridId" type="xs:string" />
+                          <xs:element name="Type" type="xs:string" />
+                          <xs:element name="Value" type="xs:string" />
+                          <xs:element name="Active" type="xs:boolean" />
+                          <xs:element name="Description" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></Schema>
+                        <Xsl><![CDATA[                                         ]]></Xsl>
+                        <Storage>
+                            <InternalStorage><![CDATA[variables]]></InternalStorage>
+                        </Storage>
+                    </XmlVariable>
+                    <XmlVariable>
+                        <Name><![CDATA[SKPastEvents]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlDocument]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PAST_CLOSED_EVENTS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Item">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EventId" type="xs:string" />
+              <xs:element name="Outcm" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></Schema>
+                        <Xsl><![CDATA[                                         ]]></Xsl>
+                        <Storage>
+                            <InternalStorage><![CDATA[variables]]></InternalStorage>
+                        </Storage>
+                    </XmlVariable>
+                    <XmlVariable>
+                        <Name><![CDATA[PastEventIterator]]></Name>
+                        <Description><![CDATA[]]></Description>
+                        <StorageType><![CDATA[XmlIterator]]></StorageType>
+                        <Scope><![CDATA[global]]></Scope>
+                        <Schema><![CDATA[]]></Schema>
+                        <Xsl><![CDATA[]]></Xsl>
+                        <Storage>
+                            <ParentVariable><![CDATA[SKPastEvents~XmlDocument]]></ParentVariable>
+                            <ParentNodeXPath><![CDATA[$$PAST_CLOSED_EVENTS$Item]]></ParentNodeXPath>
+                            <CreateNewNode><![CDATA[No]]></CreateNewNode>
+                            <VariableXPath><![CDATA[$Item]]></VariableXPath>
+                        </Storage>
+                    </XmlVariable>
+                </XmlVariables>
+            </property>
+            <property name="ExecutionView"><![CDATA[]]></property>
+            <property name="SOAObjects">
+                <SOAObjects />
+            </property>
+            <property name="Initialize Variable(s)">
+                <contentupdationfields>
+                    <contentupdationfield name="Variable.varEventId" operator="=" mode="ObjTree" methodName="03b5816fdaf147acb0e6f897ef493aff"><![CDATA[XmlVariables.SKEvent.WFEvent.EventId]]></contentupdationfield>
+                    <contentupdationfield name="Variable.varEventIds" operator="=" mode="Expression" methodName="6bd4c0d04c844634a103c3d7c55b0303"><![CDATA[{"DisplayExpressionString":"System.String.Empty",
+"ActualExprtessionString":"System.String.Empty",
+"MethodParameterList":"",
+"HtmlVerexpString":"System.String.Empty",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"",
+"NodeInfo":"System.String.Empty#System.String.Empty",
+"ReturnType":"System.String"}]]></contentupdationfield>
+                    <classname><![CDATA[6746200882bd447c9a5decf8c077253e]]></classname>
+                    <jstring><![CDATA[[{"RHSMode":"Expression",
+"LHSColumn":"Variable.varEventIds",
+"RHSColumn":"{\"DisplayExpressionString\":\"System.String.Empty\",\n\"ActualExprtessionString\":\"System.String.Empty\",\n\"MethodParameterList\":\"\",\n\"HtmlVerexpString\":\"System.String.Empty\",\n\"ReferenceList\":\"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll\",\n\"ReferencedFunctionList\":\"\",\n\"NodeInfo\":\"System.String.Empty#System.String.Empty\",\n\"ReturnType\":\"System.String\"}",
+"OPRColumn":"",
+"ColumnExpression":{"DisplayExpressionString":"System.String.Empty",
+"ActualExprtessionString":"System.String.Empty",
+"MethodParameterList":"",
+"HtmlVerexpString":"System.String.Empty",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"",
+"NodeInfo":"System.String.Empty#System.String.Empty",
+"ReturnType":"System.String"}},
+{"RHSMode":"ObjTree",
+"LHSColumn":"Variable.varEventId",
+"RHSColumn":"XmlVariables.SKEvent.WFEvent.EventId",
+"OPRColumn":"",
+"ColumnExpression":{"DisplayExpressionString":"",
+"ActualExprtessionString":"",
+"MethodParameterList":"",
+"HtmlVerexpString":"",
+"ReferenceList":"",
+"ReferencedFunctionList":"",
+"NodeInfo":""}}]]]></jstring>
+                </contentupdationfields>
+            </property>
+            <property name="Raise Exception if Completion Maker Output is not linked?"><![CDATA[Yes]]></property>
+            <property name="ExceptionTemplate">
+                <workflowmemovalue>
+                    <height><![CDATA[350]]></height>
+                    <width><![CDATA[650]]></width>
+                    <value><![CDATA[]]></value>
+                    <valueHTML><![CDATA[]]></valueHTML>
+                </workflowmemovalue>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>25</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>75</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <action name="Update Variable1" type="UpdateVariableValue" displayname="UpdateVariableValue" description="" looponoutput="">
+        <properties>
+            <property name="Set Variable">
+                <contentupdationfields>
+                    <contentupdationfield name="Variable.varEventIds" operator="=" mode="Expression" methodName="e2971f2a90d742519d4b1d87830b565d"><![CDATA[{"DisplayExpressionString":"string retval = \"\";if(Variable.varEventIds.ToString() != String.Empty){retval = Variable.varEventIds.ToString()_x002B_\",# \"_x002B_XmlVariables.PastEventIterator.EventId.ToString();}else{retval = \"#\" _x002B_XmlVariables.PastEventIterator.EventId.ToString();}return retval;",
+"ActualExprtessionString":"string retval = \"\";if(_context.Variables[\"varEventIds\"].Value.ToString() != String.Empty){retval = _context.Variables[\"varEventIds\"].Value.ToString()_x002B_\",# \"_x002B_Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\").ToString();}else{retval = \"#\" _x002B_Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\").ToString();}return retval;",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"&lt;p&gt;string retval = \"\";&lt;_x002F_p&gt;&lt;p&gt;if(Variable.varEventIds.ToString() != String.Empty)&lt;_x002F_p&gt;&lt;p&gt;{&lt;_x002F_p&gt;&lt;p&gt;retval =&nbsp;Variable.varEventIds.ToString()_x002B_\",# \"_x002B_XmlVariables.PastEventIterator.EventId.ToString();&lt;_x002F_p&gt;&lt;p&gt;}&lt;_x002F_p&gt;&lt;p&gt;else{&lt;_x002F_p&gt;&lt;p&gt;retval = \"#\" _x002B_XmlVariables.PastEventIterator.EventId.ToString();&lt;_x002F_p&gt;&lt;p&gt;}&lt;_x002F_p&gt;&lt;p&gt;&lt;br&gt;&lt;_x002F_p&gt;&lt;p&gt;return retval;&lt;_x002F_p&gt;",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\"_x002F__x002F_\" _x002B_ xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n#private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\"_x002F__x002F_\" _x002B_ xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n#private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\"_x002F__x002F_\" _x002B_ xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")",
+"ReturnType":"System.String"}]]></contentupdationfield>
+                    <classname><![CDATA[3a80ecdc23f248adb52a4328f82da7e9]]></classname>
+                    <jstring><![CDATA[[{"RHSMode":"Expression",
+"LHSColumn":"Variable.varEventIds",
+"RHSColumn":"{\"DisplayExpressionString\":\"string retval = \\\"\\\";if(Variable.varEventIds.ToString() != String.Empty){retval = Variable.varEventIds.ToString()_x002B_\\\",# \\\"_x002B_XmlVariables.PastEventIterator.EventId.ToString();}else{retval = \\\"#\\\" _x002B_XmlVariables.PastEventIterator.EventId.ToString();}return retval;\",\n\"ActualExprtessionString\":\"string retval = \\\"\\\";if(_context.Variables[\\\"varEventIds\\\"].Value.ToString() != String.Empty){retval = _context.Variables[\\\"varEventIds\\\"].Value.ToString()_x002B_\\\",# \\\"_x002B_Method759ff318e2564d9392e1dd75800faf7d(_context,\\\"!!!XmlVar!!!.PastEventIterator.EventId\\\").ToString();}else{retval = \\\"#\\\" _x002B_Method759ff318e2564d9392e1dd75800faf7d(_context,\\\"!!!XmlVar!!!.PastEventIterator.EventId\\\").ToString();}return retval;\",\n\"MethodParameterList\":\"Workflow.NET.Engine.Context _context\",\n\"HtmlVerexpString\":\"&lt;p&gt;string retval = \\\"\\\";&lt;_x002F_p&gt;&lt;p&gt;if(Variable.varEventIds.ToString() != String.Empty)&lt;_x002F_p&gt;&lt;p&gt;{&lt;_x002F_p&gt;&lt;p&gt;retval =&nbsp;Variable.varEventIds.ToString()_x002B_\\\",# \\\"_x002B_XmlVariables.PastEventIterator.EventId.ToString();&lt;_x002F_p&gt;&lt;p&gt;}&lt;_x002F_p&gt;&lt;p&gt;else{&lt;_x002F_p&gt;&lt;p&gt;retval = \\\"#\\\" _x002B_XmlVariables.PastEventIterator.EventId.ToString();&lt;_x002F_p&gt;&lt;p&gt;}&lt;_x002F_p&gt;&lt;p&gt;&lt;br&gt;&lt;_x002F_p&gt;&lt;p&gt;return retval;&lt;_x002F_p&gt;\",\n\"ReferenceList\":\"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll\",\n\"ReferencedFunctionList\":\"private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\\nstring nodeText = variableName.Substring(13);\\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\\\"_x002F__x002F_\\\" _x002B_ xpath);\\nif (values == null) values = new object[] { \\\"\\\" };\\nreturn values[0];\\n}\\n#private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\\nstring nodeText = variableName.Substring(13);\\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\\\"_x002F__x002F_\\\" _x002B_ xpath);\\nif (values == null) values = new object[] { \\\"\\\" };\\nreturn values[0];\\n}\\n#private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\\nstring nodeText = variableName.Substring(13);\\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\\\"_x002F__x002F_\\\" _x002B_ xpath);\\nif (values == null) values = new object[] { \\\"\\\" };\\nreturn values[0];\\n}\\n\",\n\"NodeInfo\":\"Variable.varEventIds#_context.Variables[\\\"varEventIds\\\"].Value$Variable.varEventIds#_context.Variables[\\\"varEventIds\\\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\\\"!!!XmlVar!!!.PastEventIterator.EventId\\\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\\\"!!!XmlVar!!!.PastEventIterator.EventId\\\")$Variable.varEventIds#_context.Variables[\\\"varEventIds\\\"].Value$Variable.varEventIds#_context.Variables[\\\"varEventIds\\\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\\\"!!!XmlVar!!!.PastEventIterator.EventId\\\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\\\"!!!XmlVar!!!.PastEventIterator.EventId\\\")$Variable.varEventIds#_context.Variables[\\\"varEventIds\\\"].Value$Variable.varEventIds#_context.Variables[\\\"varEventIds\\\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\\\"!!!XmlVar!!!.PastEventIterator.EventId\\\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\\\"!!!XmlVar!!!.PastEventIterator.EventId\\\")\",\n\"ReturnType\":\"System.String\"}",
+"OPRColumn":"",
+"ColumnExpression":{"DisplayExpressionString":"string retval = \"\";if(Variable.varEventIds.ToString() != String.Empty){retval = Variable.varEventIds.ToString()_x002B_\",# \"_x002B_XmlVariables.PastEventIterator.EventId.ToString();}else{retval = \"#\" _x002B_XmlVariables.PastEventIterator.EventId.ToString();}return retval;",
+"ActualExprtessionString":"string retval = \"\";if(_context.Variables[\"varEventIds\"].Value.ToString() != String.Empty){retval = _context.Variables[\"varEventIds\"].Value.ToString()_x002B_\",# \"_x002B_Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\").ToString();}else{retval = \"#\" _x002B_Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\").ToString();}return retval;",
+"MethodParameterList":"Workflow.NET.Engine.Context _context",
+"HtmlVerexpString":"&lt;p&gt;string retval = \"\";&lt;_x002F_p&gt;&lt;p&gt;if(Variable.varEventIds.ToString() != String.Empty)&lt;_x002F_p&gt;&lt;p&gt;{&lt;_x002F_p&gt;&lt;p&gt;retval =&nbsp;Variable.varEventIds.ToString()_x002B_\",# \"_x002B_XmlVariables.PastEventIterator.EventId.ToString();&lt;_x002F_p&gt;&lt;p&gt;}&lt;_x002F_p&gt;&lt;p&gt;else{&lt;_x002F_p&gt;&lt;p&gt;retval = \"#\" _x002B_XmlVariables.PastEventIterator.EventId.ToString();&lt;_x002F_p&gt;&lt;p&gt;}&lt;_x002F_p&gt;&lt;p&gt;&lt;br&gt;&lt;_x002F_p&gt;&lt;p&gt;return retval;&lt;_x002F_p&gt;",
+"ReferenceList":"[INSTALLDIR]Bin$$Workflow.NET.NET2.dll",
+"ReferencedFunctionList":"private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\"_x002F__x002F_\" _x002B_ xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n#private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\"_x002F__x002F_\" _x002B_ xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n#private object  Method759ff318e2564d9392e1dd75800faf7d(Workflow.NET.Engine.Context _context,string variableName){\nstring nodeText = variableName.Substring(13);\nstring varname = nodeText.Substring(0, nodeText.IndexOf('.'));\nstring xpath = nodeText.Substring(nodeText.IndexOf('.') _x002B_ 1);\nxpath = Workflow.NET.CommonFunctions.EncodeXpath(xpath);xpath = xpath.Replace('.', '_x002F_');object[] values = _context.XmlVariables[varname].GetNodeValues(\"_x002F__x002F_\" _x002B_ xpath);\nif (values == null) values = new object[] { \"\" };\nreturn values[0];\n}\n",
+"NodeInfo":"Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$Variable.varEventIds#_context.Variables[\"varEventIds\"].Value$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")$XmlVariables.PastEventIterator.EventId#Method759ff318e2564d9392e1dd75800faf7d(_context,\"!!!XmlVar!!!.PastEventIterator.EventId\")",
+"ReturnType":"System.String"}}]]]></jstring>
+                </contentupdationfields>
+            </property>
+            <property name="StopOnExceptions"><![CDATA[Yes]]></property>
+            <property name="RaiseError">
+                <raiseerror>
+                    <enableraiseerrors><![CDATA[False]]></enableraiseerrors>
+                    <value><![CDATA[]]></value>
+                    <excludederroroutputs><![CDATA[]]></excludederroroutputs>
+                    <includederroroutputs><![CDATA[]]></includederroroutputs>
+                    <stoponerror><![CDATA[True]]></stoponerror>
+                    <stoponexceptionpropertyoverrided><![CDATA[False]]></stoponexceptionpropertyoverrided>
+                </raiseerror>
+            </property>
+        </properties>
+        <visual-attributes>
+            <left>1375</left>
+            <isloop>false</isloop>
+            <height>65</height>
+            <top>225</top>
+            <width>65</width>
+        </visual-attributes>
+    </action>
+    <link from="ConvertToXML1" to="ForEach-Loop1" condition="Success" description="" name="Link0">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>865</sourceportfinalx>
+            <sourceportfinaly>258</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>1050</targetportfinalx>
+            <targetportfinaly>258</targetportfinaly>
+            <serializedpath>Link0;false;2;957;258;Link0,right,0,902,258,865,258,false,false,NaN,NaN,!,,Link0_0,;Link0,,0,902,258,902,258,false,false,NaN,NaN,!,,Link0_1,;Link0,right,0,1013,258,902,258,false,true,957,258,!,,Link0_2,;Link0,,0,1013,258,1013,258,false,false,NaN,NaN,!,,Link0_3,;Link0,right,0,1050,258,1013,258,true,false,NaN,NaN,!,,Link0_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Close if Exact Event1" to="Check if Closed or Not" condition="Success" description="" name="Link1">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>r</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>440</sourceportfinalx>
+            <sourceportfinaly>108</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>l</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>575</targetportfinalx>
+            <targetportfinaly>108</targetportfinaly>
+            <serializedpath>Link1;false;2;507;108;Link1,right,0,467,108,440,108,false,false,NaN,NaN,!,,Link1_0,;Link1,,0,467,108,467,108,false,false,NaN,NaN,!,,Link1_1,;Link1,right,0,548,108,467,108,false,true,507,108,!,,Link1_2,;Link1,,0,548,108,548,108,false,false,NaN,NaN,!,,Link1_3,;Link1,right,0,575,108,548,108,true,false,NaN,NaN,!,,Link1_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Start" to="Add Context Notes" condition="" description="" name="Link10">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>90</sourceportfinalx>
+            <sourceportfinaly>108</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>200</targetportfinalx>
+            <targetportfinaly>108</targetportfinaly>
+            <serializedpath>Link10;false;2;145;108;Link10,right,0,112,108,90,108,false,false,NaN,NaN,!,,Link10_0,;Link10,,0,112,108,112,108,false,false,NaN,NaN,!,,Link10_1,;Link10,right,0,178,108,112,108,false,true,145,108,!,,Link10_2,;Link10,,0,178,108,178,108,false,false,NaN,NaN,!,,Link10_3,;Link10,right,0,200,108,178,108,true,false,NaN,NaN,!,,Link10_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Next Loop1" to="ForEach-Loop1" condition="Next Step" description="" name="Link14">
+        <visual-attributes>
+            <sourceport>t</sourceport>
+            <sourceportside>t</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>t</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>1083</sourceportfinalx>
+            <sourceportfinaly>425</sourceportfinaly>
+            <targetport>b</targetport>
+            <targetportside>b</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>b</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>1083</targetportfinalx>
+            <targetportfinaly>290</targetportfinaly>
+            <serializedpath>Link14;false;2;1083;358;Link14,up,0,1083,398,1083,425,false,false,NaN,NaN,!,,Link14_0,;Link14,,0,1083,398,1083,398,false,false,NaN,NaN,!,,Link14_1,;Link14,up,0,1083,317,1083,398,false,true,1083,357,!,,Link14_2,;Link14,,0,1083,317,1083,317,false,false,NaN,NaN,!,,Link14_3,;Link14,up,0,1083,290,1083,317,true,false,NaN,NaN,!,,Link14_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="ForEach-Loop1" to="False Positive Exists" condition="Loop End" description="" name="Link17">
+        <visual-attributes>
+            <sourceport>lb</sourceport>
+            <sourceportside>lb</sourceportside>
+            <sourceportindex>1</sourceportindex>
+            <sourceportfinalside>lb</sourceportfinalside>
+            <sourceportfinalindex>1</sourceportfinalindex>
+            <sourceportfinalx>1050</sourceportfinalx>
+            <sourceportfinaly>278</sourceportfinaly>
+            <targetport>r</targetport>
+            <targetportside>r</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>r</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>990</targetportfinalx>
+            <targetportfinaly>408</targetportfinaly>
+            <serializedpath>Link17;false;3;1040;363;Link17,left,0,1048,278,1050,278,false,false,NaN,NaN,!,,Link17_0,;Link17,,0,1048,278,1048,278,false,false,NaN,NaN,!,,Link17_1,;Link17,left,0,1040,278,1048,278,false,false,0,0,!,,Link17_2,;Link17,down,0,1040,408,1040,278,false,true,1040,343,!,,Link17_3,;Link17,left,0,1000,408,1040,408,false,true,1020,408,!,,Link17_4,;Link17,,0,1000,408,1000,408,false,false,NaN,NaN,!,,Link17_5,;Link17,left,0,990,408,1000,408,true,false,NaN,NaN,!,,Link17_6,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Get Past ExactEvent Outcome1" to="ConvertToXML1" condition="Success" description="" name="Link2">
+        <visual-attributes>
+            <sourceport>b</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>b</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>833</sourceportfinalx>
+            <sourceportfinaly>140</sourceportfinaly>
+            <targetport>t</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>t</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>833</targetportfinalx>
+            <targetportfinaly>225</targetportfinaly>
+            <serializedpath>Link2;false;2;833;182;Link2,down,0,833,157,833,140,false,false,NaN,NaN,!,,Link2_0,;Link2,,0,833,157,833,157,false,false,NaN,NaN,!,,Link2_1,;Link2,down,0,833,208,833,157,false,true,833,182,!,,Link2_2,;Link2,,0,833,208,833,208,false,false,NaN,NaN,!,,Link2_3,;Link2,down,0,833,225,833,208,true,false,NaN,NaN,!,,Link2_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Check if Closed or Not" to="Get Past ExactEvent Outcome1" condition="NOT_CLOSED" description="" name="Link3">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>640</sourceportfinalx>
+            <sourceportfinaly>108</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>800</targetportfinalx>
+            <targetportfinaly>108</targetportfinaly>
+            <serializedpath>Link3;false;2;720;108;Link3,right,0,672,108,640,108,false,false,NaN,NaN,!,,Link3_0,;Link3,,0,672,108,672,108,false,false,NaN,NaN,!,,Link3_1,;Link3,right,0,768,108,672,108,false,true,720,108,!,,Link3_2,;Link3,,0,768,108,768,108,false,false,NaN,NaN,!,,Link3_3,;Link3,right,0,800,108,768,108,true,false,NaN,NaN,!,,Link3_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Add Context Notes" to="Close if Exact Event1" condition="Success" description="" name="Link38">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>265</sourceportfinalx>
+            <sourceportfinaly>108</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>375</targetportfinalx>
+            <targetportfinaly>108</targetportfinaly>
+            <serializedpath>Link38;false;2;320;108;Link38,right,0,287,108,265,108,false,false,NaN,NaN,!,,Link38_0,;Link38,,0,287,108,287,108,false,false,NaN,NaN,!,,Link38_1,;Link38,right,0,353,108,287,108,false,true,320,108,!,,Link38_2,;Link38,,0,353,108,353,108,false,false,NaN,NaN,!,,Link38_3,;Link38,right,0,375,108,353,108,true,false,NaN,NaN,!,,Link38_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Check if False Positive" to="Update Variable1" condition="True" description="" name="Link4">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>r</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>1315</sourceportfinalx>
+            <sourceportfinaly>258</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>l</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>1375</targetportfinalx>
+            <targetportfinaly>258</targetportfinaly>
+            <serializedpath>Link4;false;2;1345;258;Link4,right,0,1327,258,1315,258,false,false,NaN,NaN,!,,Link4_0,;Link4,,0,1327,258,1327,258,false,false,NaN,NaN,!,,Link4_1,;Link4,right,0,1363,258,1327,258,false,true,1345,258,!,,Link4_2,;Link4,,0,1363,258,1363,258,false,false,NaN,NaN,!,,Link4_3,;Link4,right,0,1375,258,1363,258,true,false,NaN,NaN,!,,Link4_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="False Positive Exists" to="Create ServiceNow Incident" condition="False" description="" name="Link5">
+        <visual-attributes>
+            <sourceport>b</sourceport>
+            <sourceportside>dynamic</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>b</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>958</sourceportfinalx>
+            <sourceportfinaly>440</sourceportfinaly>
+            <targetport>t</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>t</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>958</targetportfinalx>
+            <targetportfinaly>525</targetportfinaly>
+            <serializedpath>Link5;false;2;958;482;Link5,down,0,958,457,958,440,false,false,NaN,NaN,!,,Link5_0,;Link5,,0,958,457,958,457,false,false,NaN,NaN,!,,Link5_1,;Link5,down,0,958,508,958,457,false,true,958,482,!,,Link5_2,;Link5,,0,958,508,958,508,false,false,NaN,NaN,!,,Link5_3,;Link5,down,0,958,525,958,508,true,false,NaN,NaN,!,,Link5_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Check if False Positive" to="Next Loop1" condition="False" description="" name="Link6">
+        <visual-attributes>
+            <sourceport>bl</sourceport>
+            <sourceportside>bl</sourceportside>
+            <sourceportindex>1</sourceportindex>
+            <sourceportfinalside>bl</sourceportfinalside>
+            <sourceportfinalindex>1</sourceportfinalindex>
+            <sourceportfinalx>1273</sourceportfinalx>
+            <sourceportfinaly>280</sourceportfinaly>
+            <targetport>rt</targetport>
+            <targetportside>rt</targetportside>
+            <targetportindex>1</targetportindex>
+            <targetportfinalside>rt</targetportfinalside>
+            <targetportfinalindex>1</targetportfinalindex>
+            <targetportfinalx>1115</targetportfinalx>
+            <targetportfinaly>438</targetportfinaly>
+            <serializedpath>Link6;false;3;1273;438;Link6,down,0,1273,311,1273,280,false,false,NaN,NaN,!,,Link6_0,;Link6,,0,1273,311,1273,311,false,false,NaN,NaN,!,,Link6_1,;Link6,down,0,1273,438,1273,311,false,true,1273,374,!,,Link6_2,;Link6,left,0,1146,438,1273,438,false,true,1209,438,!,,Link6_3,;Link6,,0,1146,438,1146,438,false,false,NaN,NaN,!,,Link6_4,;Link6,left,0,1115,438,1146,438,true,false,NaN,NaN,!,,Link6_5,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="ForEach-Loop1" to="Check if False Positive" condition="Step" description="" name="Link7">
+        <visual-attributes>
+            <sourceport>r</sourceport>
+            <sourceportside>r</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>r</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>1115</sourceportfinalx>
+            <sourceportfinaly>258</sourceportfinaly>
+            <targetport>l</targetport>
+            <targetportside>l</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>l</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>1250</targetportfinalx>
+            <targetportfinaly>258</targetportfinaly>
+            <serializedpath>Link7;false;2;1182;258;Link7,right,0,1142,258,1115,258,false,false,NaN,NaN,!,,Link7_0,;Link7,,0,1142,258,1142,258,false,false,NaN,NaN,!,,Link7_1,;Link7,right,0,1223,258,1142,258,false,true,1182,258,!,,Link7_2,;Link7,,0,1223,258,1223,258,false,false,NaN,NaN,!,,Link7_3,;Link7,right,0,1250,258,1223,258,true,false,NaN,NaN,!,,Link7_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="Update Variable1" to="Next Loop1" condition="Updated" description="" name="Link8">
+        <visual-attributes>
+            <sourceport>b</sourceport>
+            <sourceportside>b</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>b</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>1408</sourceportfinalx>
+            <sourceportfinaly>290</sourceportfinaly>
+            <targetport>rb</targetport>
+            <targetportside>rb</targetportside>
+            <targetportindex>1</targetportindex>
+            <targetportfinalside>rb</targetportfinalside>
+            <targetportfinalindex>1</targetportfinalindex>
+            <targetportfinalx>1115</targetportfinalx>
+            <targetportfinaly>478</targetportfinaly>
+            <serializedpath>Link8;true;3;1356;478;Link8,down,0,1408,327,1408,290,false,false,1408,290,!,,Link8_0,;Link8,,0,1408,327,1408,327,false,false,NaN,NaN,!,,Link8_1,;Link8,down,0,1408,478,1408,327,false,true,1408,402,!,,Link8_2,;Link8,left,0,1173,478,1408,478,false,true,1290,478,!,,Link8_3,;Link8,,0,1173,478,1173,478,false,false,NaN,NaN,!,,Link8_4,;Link8,left,0,1115,478,1173,478,true,false,1115,478,!,,Link8_5,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+    <link from="False Positive Exists" to="Close Event1" condition="True" description="" name="Link9">
+        <visual-attributes>
+            <sourceport>l</sourceport>
+            <sourceportside>l</sourceportside>
+            <sourceportindex>0</sourceportindex>
+            <sourceportfinalside>l</sourceportfinalside>
+            <sourceportfinalindex>0</sourceportfinalindex>
+            <sourceportfinalx>925</sourceportfinalx>
+            <sourceportfinaly>408</sourceportfinaly>
+            <targetport>r</targetport>
+            <targetportside>dynamic</targetportside>
+            <targetportindex>0</targetportindex>
+            <targetportfinalside>r</targetportfinalside>
+            <targetportfinalindex>0</targetportfinalindex>
+            <targetportfinalx>840</targetportfinalx>
+            <targetportfinaly>408</targetportfinaly>
+            <serializedpath>Link9;false;2;883;408;Link9,left,0,908,408,925,408,false,false,NaN,NaN,!,,Link9_0,;Link9,,0,908,408,908,408,false,false,NaN,NaN,!,,Link9_1,;Link9,left,0,857,408,908,408,false,true,882,408,!,,Link9_2,;Link9,,0,857,408,857,408,false,false,NaN,NaN,!,,Link9_3,;Link9,left,0,840,408,857,408,true,false,NaN,NaN,!,,Link9_4,</serializedpath>
+            <thickness>1</thickness>
+            <color>#000000</color>
+            <linetype />
+            <islocked>false</islocked>
+        </visual-attributes>
+    </link>
+</workflow>
